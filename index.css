@@ -7,40 +7,81 @@
     text-align: center;
 }
 
+:root {
+    --container-height: 550px; 
+}
+
 .container {
-    margin: 20px;
-    height: 550px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     border: 3px solid powderblue;
     background-color: rebeccapurple;
+
+    margin: 35px;
+    width: 1500px;
+    height: var(--container-height);
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .item {
-    display: inline-block;
-    margin: 10px;
-    width: 100px;
-    max-height: 380px;
+    max-height: 440px;
     background-color: brown;
-    bottom: 0;
+    border: 1px solid wheat;
+    transition: height 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 1;
+    transition: height .5s;
+    margin: 0px auto;
 }
 
-.item > h3 {
-    position: absolute;
+.item:active {
+    opacity: 0.4;
 }
 
 .animation-btn-container {
     width: 100%;
-    padding: 0 40%;
-    margin: 50px 0px;
+    padding: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .animation-btn-container > button  {
     cursor: pointer;
     width: 250px;
     height: 50px;
     border-radius: 10px;
+    margin: 10px;
     border: 1px solid;
     outline: none;
-    transition: transform .5s, border .5s;
+    transition: transform 100ms, border 100ms;
+}
+
+.quickSortContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: buttonface;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.quickSortSelectContent {
+    width: 250px;
+    height: 50px;
+    background-color: buttonface;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px 0px;
+    list-style: none;
+    outline: none;
 }
 
 .animation-btn-container > button:hover  {
@@ -52,3 +93,34 @@
     border: 1px solid orchid;
 }
 
+
+@media only screen and (max-width: 411px) {
+    .container {
+        justify-content: space-evenly;
+        width: 390px;
+    }
+    .animation-btn-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .animation-btn-container > button  {
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        margin: 10px;
+        border: 1px solid;
+        outline: none;
+        transition: transform 30ms, border 30ms;
+    }
+    .quickSortContainer{
+        flex-direction: row;
+    }
+    .quickSortSelectContent {
+        width: 170px;
+    }
+    .quickSortLabel{
+        width: 40px;
+        margin: 1px;
+    }
+}

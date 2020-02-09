@@ -7,36 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
-    <title>Document</title>
+    <title>Sorting Visualizer</title>
 </head>
 
 <body>
     <div class="container">
-        <div id="1" class="item">
-            <h3>1</h3>
-        </div>
-        <div id="2" class="item">
-            <h3>2</h3>
-        </div>
-        <div id="3" class="item">
-            <h3>3</h3>
-        </div>
-        <div id="4" class="item">
-            <h3>4</h3>
-        </div>
-        <div id="5" class="item">
-            <h3>5</h3>
-        </div>
-        <div id="6" class="item">
-            <h3>6</h3>
-        </div>
-        <div id="7" class="item">
-            <h3>7</h3>
-        </div>
     </div>
     <div class="animation-btn-container">
-        <button onclick="sort()">Click to start an animation</button>
+        <button onclick="bubbleSort()">Bubble Sort</button>
+        <div class="quickSortContainer">
+            <label class="quickSortLabel" for="quickSort">Quick Sort</label>
+            <select class="quickSortSelectContent" name="quickSort">
+                <option value="none" selected>Select a sorting value</option>
+                <option value="lomuto" >Quick Sort - Lomuto Version</option>
+                <option value="hoare">Quick Sort - Hoare Version</option>
+            </select>
+        </div>
+        <button onclick="countingSort()">Counting Sort</button>
+        <button onclick="mergeSort()">Merge Sort</button>
+        <button id="reset" onclick="reset()">Reset</button>
     </div>
 </body>
 
 </html>
+
+
+<!-- <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div>
+        <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div>
+        <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div>
+        <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div>
+        <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div>
+        <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div>
+        <div onclick="move(id)" class="item">
+            <h3></h3>
+        </div> -->
