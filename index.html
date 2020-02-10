@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
+    <script src="sort.js" defer></script>
     <title>Sorting Visualizer</title>
 </head>
 
@@ -14,17 +15,17 @@
     <div class="container">
     </div>
     <div class="animation-btn-container">
-        <button onclick="bubbleSort()">Bubble Sort</button>
+        <button id="bubble" onclick="bubbleSort()">Bubble Sort</button>
         <div class="quickSortContainer">
             <label class="quickSortLabel" for="quickSort">Quick Sort</label>
-            <select class="quickSortSelectContent" name="quickSort">
+            <select class="quickSortSelectContent" id="quickSort" name="quickSort">
                 <option value="none" selected>Select a sorting value</option>
                 <option value="lomuto" >Quick Sort - Lomuto Version</option>
                 <option value="hoare">Quick Sort - Hoare Version</option>
             </select>
         </div>
-        <button onclick="countingSort()">Counting Sort</button>
-        <button onclick="mergeSort()">Merge Sort</button>
+        <button id="counting" onclick="countingSort()">Counting Sort</button>
+        <button id="merge" onclick="mergeSort()">Merge Sort</button>
         <button id="reset" onclick="reset()">Reset</button>
     </div>
 </body>
