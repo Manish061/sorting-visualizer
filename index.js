@@ -124,26 +124,26 @@ function onClick(e) {
 }
 
 
-window.requestAnimationFrame(swapItem)
+// window.requestAnimationFrame(swapItem)
 
 function sleep(ms) {
     return new Promise((resolve, reject) => setTimeout(resolve, ms));
 }
 
 async function swapItem(value1, value2, ms) {
-    sleep(ms).then(() => {
-        temp = value1.innerText;
-        temp1 = value1.style.height;
-        temp2 = value1.style.marginTop
+    await sleep(ms)
+    temp = value1.innerText;
+    temp1 = value1.style.height;
+    temp2 = value1.style.marginTop
 
-        value1.innerText = value2.innerText;
-        value1.style.marginTop = value2.style.marginTop;
-        value1.style.height = value2.style.height;
+    value1.innerText = value2.innerText;
+    value1.style.marginTop = value2.style.marginTop;
+    value1.style.height = value2.style.height;
 
-        value2.innerText = temp;
-        value2.style.marginTop = temp2;
-        value2.style.height = temp1;
-    })
+    value2.innerText = temp;
+    value2.style.marginTop = temp2;
+    value2.style.height = temp1;
+    // })
 }
 
 function swap(value) {
