@@ -43,6 +43,16 @@
     opacity: 0.4;
 }
 
+.header {
+    background-color: buttonface;
+    border: 1px solid #646464;
+    margin: 10px 10px 0 10px;
+}
+.header1, .header2 {
+    margin: 5px 0px;
+    font-size: 1em;;
+}
+
 .animation-btn-container {
     width: 100%;
     padding: 0 auto;
