@@ -1,4 +1,4 @@
-let items, n = 200;
+let items, n = 500;
 let start = null;
 // let items, n;
 
@@ -14,6 +14,10 @@ function onloading() {
     const containerWidth = container.clientWidth;
     // n = items.length;
     let itemWidth = 50;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        n = 130;
+        container.style.margin = '0px auto';
+    }
     if ((n * itemWidth) > containerWidth) {
         itemWidth = containerWidth / n;
     }

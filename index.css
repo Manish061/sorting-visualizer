@@ -18,8 +18,8 @@
     border: 3px solid powderblue;
     background-color: rebeccapurple;
 
-    margin: 35px;
-    width: 1500px;
+    margin: 10px auto;
+    width: 80%;
     height: var(--container-height);
     overflow-x: scroll;
     overflow-y: hidden;
@@ -107,7 +107,7 @@
 @media only screen and (max-width: 411px) {
     .container {
         justify-content: space-evenly;
-        width: 390px;
+        width: 380px;
     }
     .animation-btn-container {
         flex-direction: row;
