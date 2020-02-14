@@ -1,4 +1,4 @@
-let items, n = 500;
+let items, n;
 let start = null;
 // let items, n;
 
@@ -17,6 +17,9 @@ function onloading() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         n = 130;
         container.style.margin = '0px auto';
+    } else {
+        n = 400;
+        container.style.width = '90%';
     }
     if ((n * itemWidth) > containerWidth) {
         itemWidth = containerWidth / n;

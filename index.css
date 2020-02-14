@@ -1,9 +1,10 @@
-*{
+*, *::before, *::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: medium;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-display: swap;
     text-align: center;
 }
 
@@ -46,7 +47,10 @@
 .header {
     background-color: buttonface;
     border: 1px solid #646464;
-    margin: 10px 10px 0 10px;
+    /* margin: 10px 10px 0 10px; */
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
 }
 .header1, .header2 {
     margin: 5px 0px;
