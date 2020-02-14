@@ -18,8 +18,8 @@
     border: 3px solid powderblue;
     background-color: rebeccapurple;
 
-    margin: 35px;
-    width: 1500px;
+    margin: 10px auto;
+    width: 80%;
     height: var(--container-height);
     overflow-x: scroll;
     overflow-y: hidden;
@@ -35,12 +35,22 @@
     justify-content: flex-end;
     align-items: center;
     opacity: 1;
-    transition: height .5s;
+    transition: height 500ms;
     margin: 0px auto;
 }
 
 .item:active {
     opacity: 0.4;
+}
+
+.header {
+    background-color: buttonface;
+    border: 1px solid #646464;
+    margin: 10px 10px 0 10px;
+}
+.header1, .header2 {
+    margin: 5px 0px;
+    font-size: 1em;;
 }
 
 .animation-btn-container {
@@ -97,7 +107,7 @@
 @media only screen and (max-width: 411px) {
     .container {
         justify-content: space-evenly;
-        width: 390px;
+        width: 380px;
     }
     .animation-btn-container {
         flex-direction: row;

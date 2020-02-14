@@ -5,7 +5,7 @@ async function bubbleSortUtil(arr) {
                 let temp = arr[j + 1];
                 arr[j + 1] = arr[j];
                 arr[j] = temp;
-                await swapItem(items[j], items[j + 1], 1);
+                await swapItem(items[j], items[j + 1], 10);
                 // swap(items[j + 1]);
             }
         }
@@ -52,7 +52,13 @@ async function quickSortUtil(arr, lb, ub, quickSortType) {
         } else if (quickSortType === 'hoare') {
             pivot = await partitionHoare(arr, lb, ub);
         }
-        await Promise.all([quickSortUtil(arr, lb, pivot - 1, quickSortType),quickSortUtil(arr, pivot + 1, ub, quickSortType)])
+        await quickSortUtil(arr, lb, pivot - 1, quickSortType)
+        await quickSortUtil(arr, pivot + 1, ub, quickSortType)
+
+        // await Promise.all([
+        //     quickSortUtil(arr, lb, pivot - 1, quickSortType),
+        //     quickSortUtil(arr, pivot + 1, ub, quickSortType)
+        // ]);
     }
 }
 
@@ -75,7 +81,7 @@ async function partitionLomuto(arr, lb, ub) {
     temp = arr[i + 1];
     arr[i + 1] = arr[ub];
     arr[ub] = temp;
-    await swapItem(items[i + 1], items[ub], 100);
+    await swapItem(items[i + 1], items[ub], 10);
     // setTimeout(() => {
     //     swap(items[i + 1]);
     //     swap(items[ub]);
@@ -117,8 +123,9 @@ async function mergeSort() {
 async function mergeSortUtil(arr, lb, ub) {
     if (lb < ub) {
         let mid = lb + Math.floor((ub - lb) / 2);
-        // await Promise.all([mergeSortUtil(arr, lb, mid), mergeSortUtil(arr, mid + 1, ub)])
         await Promise.all([mergeSortUtil(arr, lb, mid), mergeSortUtil(arr, mid + 1, ub)])
+        // await mergeSortUtil(arr, lb, mid);
+        // await mergeSortUtil(arr, mid + 1, ub))
         await merge(arr, lb, mid, ub);
     }
 }
@@ -193,7 +200,7 @@ async function countingSortUtil(arr) {
         --count[height];
     }
     for (let i = 0; i < n; i++) {
-        await sleep(100);
+        await sleep(10);
         items[i].style.height = `${output[i]}px`;
         items[i].style.marginTop = `${400 - output[i]}px`;
     }
